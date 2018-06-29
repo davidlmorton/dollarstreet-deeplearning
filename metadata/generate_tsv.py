@@ -21,7 +21,7 @@ for text_filename in text_filenames:
             else:
                 category = text_filename.split('.')[0]
                 country = url.split('media/')[1].split('/image')[0]
-                image_filename = url.split('/')[-1]
+                image_filename = url.split('/')[-1].split('.')[0]
                 images.append({
                     'category': category,
                     'country': country,
