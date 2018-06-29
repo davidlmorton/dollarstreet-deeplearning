@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+set -o errexit
+set -o pipefail
+set -o nounset
+
+REPO_ROOT=$(git rev-parse --show-toplevel)
+TSV_FILE="${REPO_ROOT}/metadata/data.tsv"
+DOWNLOAD_DIR="${REPO_ROOT}/data"
+
+mkdir -p ${DOWNLOAD_DIR}
+cd ${DOWNLOAD_DIR}
+
+wget -nc -nv -i <(tail -n +2 ${TSV_FILE} | awk -F '\t' '{print $5}')
