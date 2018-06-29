@@ -18,9 +18,15 @@ $(".cell-inner").each((index, element) => {
     console.log(index)
 ```
 
-To regenerate the `data.tsv` file you can run the `generate_tsv.py` script:
+To regenerate the `data.tsv` file you can run the `generate_tsv.py` script (expects to be run with python 3.6+):
 
 ```
-cd metadata
-python generate_tsv.py *.txt
+$ cd metadata
+$ python generate_tsv.py *.txt
+```
+
+To download the data just run the script:
+
+```
+$ scripts/download
 ```
